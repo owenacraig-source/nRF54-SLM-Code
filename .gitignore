@@ -1,0 +1,12 @@
+.pio/
+.venv/
+__pycache__/
+*.pyc
+recordings/
+*.wav
+*.s16le
+.capture-counter.sqlite3*
+
+
+*.asv
+.DS_Store

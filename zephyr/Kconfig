@@ -1,0 +1,25 @@
+mainmenu "Single microphone capture"
+
+source "Kconfig.zephyr"
+
+config APP_RECORD_DELAY_MS
+	int "Time from boot to first saved sample in milliseconds"
+	default 10000
+	range 0 2147483647
+	help
+	  Microphone setup and warmup count toward this delay. Set to zero
+	  to record as soon as the microphone is ready.
+
+config APP_CAPTURE_DURATION_MS
+	int "Duration of saved audio in milliseconds (multiple of 10)"
+	default 4000
+	range 10 5000
+	help
+	  One mono 48 kHz s16 capture per reset. The linker additionally requires
+	  at least 32 KiB of unused RAM after all stacks, buffers and kernel data.
+
+config APP_GAIN_DB
+	int "PDM hardware gain in dB"
+	default 20
+	range -20 20
+
